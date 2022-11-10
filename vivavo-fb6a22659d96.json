@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "vivavo",
+  "private_key_id": "fb6a22659d96d13efb10230ab30a18e03d4afb11",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDXZme7Pb0bKUxh\nP7bz13kO36zPf+6aoGRzS3I3YA9WaFHAC9mSxAuk8TKv7YH3P4efqtDhtUneM/Vg\n4cCGTiqASuINmjaUWrtca/rVFxlwpCc12pcVzE4x2V39Qoc4QUSLKybKeo3dU9QS\nXT0jPlHzeoWs1d5d0pNcjYdRU8YNUdat9bNS+8bQbHSVmRH5k9xEbJL+ooV7GgVr\nSjkU/wDflfsEqUovt1zj3JqI5vO3IEIZhLYhkRkgLKG9VaeoHS74XdPT+lEqQOsb\n+Euif4gQ9HWDkOtK7YNy65sDnJCaKiDjGXZonROcZY9B09sFcZ02fqSkxzFnXPCu\ncg4LcvY9AgMBAAECggEARRORJonpEEHRPcqqCE7MgsmWaMDVKv9O126VhU6n/ITd\n2qGyN4/pUA8Nuz+Gk1zrSHgGHqv9sWWmRlh/XlLI7HWXQtd2s2LZfQ0f1qBexzHN\nZUbhdtsbJH9Z1fM03ASKT7sZ6Ise3aCZfP4rsha1P0jGf6PieOIj4eV9RMaB2BkU\nkwUTBENM5MAaokQm+luEZVLvEFqqU3iTY9sudDv5ZnecCn1+nful9n/72D9WL01i\ntEvAaDTkpUaGIF1eJWkqePDvUfdfK8roAIp8CQGiww70L4YDNIUW80NXprfhMvSV\nVMFj/7h2uaF+4/zKeiwwdGD9x2XAcGL1GlYyVQTyHQKBgQD+JGdYKZUgjO7vW+m0\nr2jQRVVBPcC7irohG6uErItXn3xsiH55jQ90kg06AEawRpx4vDnQ7ej+Ntif111A\nbzzx3vnGJ51FS+ISVWxNOTNGcpqxjY1/pBo6mif9/I8F5XvQpW2KlkwYAd8v3HS6\nNv2LghpH5jTdvAQqxA9ghdTrfwKBgQDY+YAOPK3UwaUdaujUX5Z7nx2ygCUzQ1mh\n+FneR6gHsYmsRxC/Ra2SeAJWKkjykIr5Gqi2y006M44Ez5OKnyo5o3o+SY7dCDv9\nBQcJDRtXf6ixYTZpcMOgcgd8HWK76uAH/lkSVdZFFo6ypQTpsIq3q7nnop9vZySG\nRK09SYCsQwKBgHf1CuqsRf2lSCqnAbsNiLW15DX1RgG/y3dRLjZjkyn616oLC1eo\nY4EsZx3Xf4Y47iZ3AftCMNW9Yaag6x085FFuZAtKK4vH85+fvoz80N0Rvz7Lh9yV\nwuOiW/ogugmYdkbXrsrZgnVafNSEhHxY9HhjIrCJUq7OzlC5VmDDCutVAoGAZ1nJ\nDn8Gyi4HKVEQYIC7nFz5d1ok3hs5qbYzkHaPakK98krThlh5SihR7JstriT9nZR+\nQrvqKEwAXPhHLiOMqHHfO6YsH8rZUDdB16TfnjkXsI4+rdDhzh4ixJL2wc4qMoSM\nBvjOHJCXHi8OfQXzvXNWFSjYSudVdYNnBadqXCMCgYEAphQpUPA5FOMj2gGHm2Kv\n1BTPo5eyKqiH6sGjsUAKbmhwtPodUYvyee+UWSWHiWxYg3MGs/zewr5JCdqtxqqc\n43crj6kqc4+QCqNtdIl+IBEGDEn0743AerUbc3FgQ1y2NSeEiBPR/VAA+k/dYnyo\naLvikiURSDE5HRL/O9GdN6E=\n-----END PRIVATE KEY-----\n",
+  "client_email": "gsheets-account@vivavo.iam.gserviceaccount.com",
+  "client_id": "103840127591669118397",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gsheets-account%40vivavo.iam.gserviceaccount.com"
+}

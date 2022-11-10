@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="content-script-type" content="text/javascript">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta http-equiv="Content-Security-Policy" content="child-src 'self';">
+        <link rel="stylesheet" type="text/css" href="devide.css">
+        <link rel="stylesheet" type="text/css" href="v2.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.js"></script>
+        <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+        <title>びばぼ - vivavo v2</title>
+    </head>
+    <body>
+        <div>
+            <form class="ready">
+                テリトリーカード(裏面)を入力：<input type="text" id="territory"><br>
+                デッキリストを入力：<textarea name="decklist" id="list" cols="30" rows="10"></textarea>
+                <input type="button" value="デッキをセット" id="setdeck">
+            </form>
+        </div>
+        <div class="utils">
+            <button id="shuffle_deck">デッキをシャッフルして5ドロー</button>
+        </div>
+        <div id="your_territory">
+            <span>あなたのテリトリー</span>
+            <li v-for="image in images" :key="images.key">
+                <img :src="image.src" alt="">
+            </li>
+        </div>
+        <div id="enemy_territory">
+            <span>対戦相手のテリトリー</span>
+            <li v-for="image in images" :key="images.key">
+                <img :src="image.src" alt="">
+            </li>
+        </div>
+        <div id="hands">
+        </div>
+
+        <script type="text/javascript" src="v2.js"></script>
+    </body>
+</html>

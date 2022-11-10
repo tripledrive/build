@@ -1,0 +1,132 @@
+.float{
+    display: flex;
+}
+
+.hand{
+    border: solid 2px black;
+    background-color: rgb(31, 37, 37);
+    min-height: 240px;
+    width:900px;
+}
+
+.energy,.energy_enem{
+    border: solid 2px black;
+    background-color: rgb(65, 61, 71);
+    min-height: 240px;
+    width:900px;
+}
+
+.energy img,.energy_enem img{
+    margin-right: -30px;
+    padding-bottom: -130px;
+}
+
+.field,.field_enem{
+    border: solid 2px black;
+    background-color: rgb(49, 47, 45);
+    min-height: 240px;
+    width:900px;
+}
+
+.h_text{
+    color: aliceblue;
+}
+
+img{
+    width: 126px;
+    height: 176px;
+}
+
+.field img,.field_enem img{
+    margin-right:3px;
+}
+
+.active{
+    border: solid 3px red;
+}
+
+.active_{
+    border: solid 3px red;
+}
+
+
+
+
+.tapped{
+    transform: rotate(90deg);
+}
+
+.gy img,.gy_enem img{
+    margin-bottom: -160px;
+}
+
+.rm,.gy{
+    border: solid 2px black;
+    background-color: rgb(48, 41, 41);
+    width: 260px;
+    height: 726px;
+}
+
+.rm_enem,.gy_enem{
+    border: solid 2px black;
+    background-color: rgb(48, 41, 41);
+    width: 260px;
+    height: 484px;
+}
+.selectcards{
+    width: 400px;
+    height: 484px;
+}
+
+#selected_cards{
+    height:480px;
+}
+
+.rm img,.rm_enem img{
+    margin-bottom: -160px;
+}
+
+.look{
+    border: solid 2px black;
+    background-color: rgb(63, 72, 82);
+    width: 260px;
+    height: 240px;
+    float: right;
+}
+
+.padding_b15{
+    margin-bottom: 8px;
+}
+
+.look img{
+    margin-left: -80px;
+}
+
+.look img:first-of-type{
+    margin-left: 0px;
+}
+
+.utils{
+    padding-bottom: 30px;
+}
+
+.status{
+    border: solid 2px black;
+    width:260px;
+    height: 484px;
+}
+
+.status_enem{
+    border: solid 2px black;
+    width:260px;
+    height: 484px;
+}
+
+.turn{
+    border: solid 5px red;
+}
+
+.openned{
+    background-color: chartreuse;
+}
+

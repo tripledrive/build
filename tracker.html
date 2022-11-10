@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="content-script-type" content="text/javascript">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta http-equiv="Content-Security-Policy" content="child-src 'self';">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
+        <script type="text/javascript" src="track.js"></script>
+        <script type="text/javascript" src="cardlists.js"></script>
+        <title>vivavo-tracking</title>
+    </head>
+    <body>
+        <div>
+            びばぼ対戦データ集積<br>
+            <input type="radio" id="show_cards_data" name="categories" onclick="cards_disp()" checked>カードごとのデータ(全テリトリー)
+            <input type="radio" id="show_decks_data" name="categories" onclick="decks_on()" >対面勝率(工事中)
+            <div id="filter">
+                テリトリーごとの情報で絞り込む：<select id="y_t"></select><br>
+                対戦相手のテリトリーで絞り込む：<select id="e_t"></select><br>
+                <input class="btn btn-primary btn-sm" type="button" value="絞り込みを実行" onclick="filter()">
+            </div>
+        </div>
+        <div>
+        <table class="table tablesorter all_cards" id="all_cards">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>games in deck</th>
+                    <th>games in deck WR</th>
+                    <th>games in hands</th>
+                    <th>games in hands WR</th>
+                    <th>games not in hands</th>
+                    <th>games not in hands WR</th>
+                    <th>games in life</th>
+                    <th>games in life WR</th>
+                    <th>improvement when drawn</th>
+                </tr>
+            </thead>
+            <tbody id="all_cards_data">
+            </tbody>
+        </table>
+        <table class="table decks" id="decks" style="display: none;">
+            <thead id="territory_names">
+                <tr>
+                    <th>name</th>
+                    <th>総合勝率</th>
+                    <th>vs瘴気の魔宮</th>
+                    <th>vs重装拠点 バルバビロン</th>
+                    <th>vs陸上戦艦 グラドミラル</th>
+                    <th>vs天空の城塞</th>
+                    <th>vs審判の神殿</th>
+                    <th>vs火竜のアギト</th>
+                    <th>vs命運の遊技場</th>
+                    <th>vs千尋の大渓谷</th>
+                    <th>vs試練の巨塔</th>
+                    <th>vs地下武装庫 アーセナルフォート</th>
+                    <th>vs断罪の碑文</th>
+                </tr>
+            </thead>
+            <tbody id="territory_winrate">
+            </tbody>
+        </table>
+        </div>
+    </body>
+</html>

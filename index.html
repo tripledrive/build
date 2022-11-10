@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="content-script-type" content="text/javascript">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta http-equiv="Content-Security-Policy" content="child-src 'self';">
+        <link rel="stylesheet" type="text/css" href="devide.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.js"></script>
+        <script type="text/javascript" src="devide.js"></script>
+        <title>びばぼ - vivavo</title>
+    </head>
+    <body>
+        <form class="ready">
+            テリトリーカード(裏面)を入力：<input type="text" id="territory"><br>
+            デッキリストを入力：<textarea name="decklist" id="list" cols="30" rows="10"></textarea>
+            <input type="button" value="デッキをセット" id="setdeck">
+        </form>
+        <div class="utils">
+            <button class="set_io">設定欄開閉</button>｜
+            <button class="shuffle_deck">デッキをシャッフルして5ドロー</button>
+            <button class="maligun">マリガン</button>
+            <button class="setall">ライフとエナジーをセット</button>
+            <button class="clr">選択を解除</button>
+            <button class="dice">先手後手決定(1d100)</button>→<span id="d100"></span>/対戦相手:<span id="d100_enem"></span>
+            <br>
+            <button class="tap">選んだカードをレスト/スタンド</button>
+            <button class="set_top">選んだカードをデッキの一番上に</button>
+            <button class="looktop">デッキトップを見る(スカウト1)</button>
+            <br>
+            <button class="fatigue">ライフから手札へ(ファティーグ)</button>
+            
+        </div>
+        <div class="float">
+            <div>
+                <div class="status_enem">
+                    [対戦相手]<br>
+                    <span id="ace_enem"></span><br><span id="topen_enem"></span><br>
+                    デッキ枚数:<span id="sheets_enem"></span><br>
+                    ライフ:<span id="lifes_enem"></span><br>
+                    手札枚数:<span id="cardinhand_enem"></span><br>
+                    断罪カウンター:<span id="judge_enem"></span>
+                    <button class="t_end">ターンを終了<br>(相手にターンマーカーを渡す)</button>
+                </div>
+                <div class="status">
+                    [あなた]<br>
+                    <span id="ace"></span><br><span id="topen"></span><br>
+                    デッキ枚数:<span id="sheets"></span><br>
+                    ライフ:<span id="lifes"></span><br>
+                    手札枚数:<span id="cardinhand"></span><br>
+                    断罪カウンター:<span id="judge"></span>  <button class="judge_up">▲</button><button class="judge_down">▼</button><br>
+                    <button class="set_fie_at">アサルトテリトリーとして解放</button>
+                </div>
+                <div class="look">
+                    <span class="h_text">【見ているカード】</span><br><button class="looktop">デッキトップを見る(スカウト1)</button><br><button class="set_top_look">カードを山上に</button><button class="set_bot">カードを山下に</button><br>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="energy_enem">
+                    
+                </div>
+                <div class="field_enem">
+                    
+                </div>
+                <div class="field">
+                    <span class="h_text">【フィールド】</span>
+                    <button class="set_fie">カードをここに</button>
+                    <button class="open_tt">テリトリー開閉</button>
+                    <button class="close_at">アサルトテリトリーを閉じる</button>
+                    <button class="put_aura">選択中のカードをオーラとしてつける</button>
+                    <button class="select_field" style="display: none">対象として選択</button>
+                    <br>
+                </div>
+                <div class="energy">
+                    <span class="h_text">【エナジーゾーン】</span>
+                    <button class="set_eng">カードをここに</button>
+                    <button class="boost_life">ライフからエナジーへ</button>
+                    <button class="boost_deck">デッキトップからエナジーへ</button>
+                    <button class="tap">選んだカードをレスト/スタンド</button><br>
+                </div>
+                <div></div>
+                <div></div>
+                <div class="hand">
+                    <span class="h_text">【手札】</span><button class="draw">ドロー</button>｜<button class="untap">すべてスタンド</button>｜<button class="set_hand">カードをここに</button><br>
+                </div>
+            </div>
+            <div>
+                <div class="gy_enem">
+                    
+                </div>
+                <div class="gy">
+                    <span class="h_text">【墓地】</span><br><button class="set_gy">カードをここに</button><br>
+                </div>
+            </div>
+            <div>
+                <div class="rm_enem">
+                    
+                </div>
+                <div class="rm">
+                    <span class="h_text">【追放領域】</span><br><button class="set_rm">カードをここに</button><br>
+                </div>
+            </div>
+            <div>
+                <div class="selectcards">
+                    【選択したカードの詳細】<br>
+                    <span id="selected_card"></span><br>
+                </div>
+                <div>
+                    <button class="damage padding_b15">ダメージ処理<br>ライフを墓地に</button><br>
+                    <button class="heal  padding_b15">デッキトップをライフに</button><br>
+                    <button class="pig padding_b15">デッキトップを墓地に</button><br>
+                    <button class="shf_2 padding_b15">自分のデッキをシャッフル</button><br>
+                    <br><br><br>
+                    <button class="defeat_call">投了を宣言（トラッカーに勝敗が記録されます）</button><br>
+                    <button class="finish_game">強制リロード（続行不可能になったらクリック）</button><br>
+                    <br>
+                </div>
+                <div class="auraview">
+                    <span>【選択したカードについているオーラ】</span><br>
+                    <button class="put_aura_gy">選択したオーラを墓地へ</button>
+                    <div id="select_aura"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
